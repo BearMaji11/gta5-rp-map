@@ -293,7 +293,7 @@
             </div>
         `);
 
-         var mrpdditchsubwayMarker = L.marker([517, 1029]).addTo(subwayLayer);
+        var mrpdditchsubwayMarker = L.marker([517, 1029]).addTo(subwayLayer);
         mrpdditchsubwayMarker.bindPopup(`
             <div class="rp-popup" style="width: 280px;">
                 <h3>警局後水溝小道</h3>
@@ -304,7 +304,81 @@
             </div>
         `);
 
-        // 機場區域
+        var eltasubwayMarker = L.marker([496, 904]).addTo(subwayLayer);
+        eltasubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>艾爾塔地下道</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>通往大十字</li>
+                    <li>下一站是白停</li>
+                </ul>
+            </div>
+        `);
+
+        var whitesubwayMarker = L.marker([553, 858]).addTo(subwayLayer);
+        whitesubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>白停捷運站</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>往大十字方向下一站是海灣市捷運站</li>
+                    <li>往艾爾塔方向下一站是艾爾塔出口</li>
+                </ul>
+            </div>
+        `);
+
+        var baysubwayMarker = L.marker([579, 715]).addTo(subwayLayer);
+        baysubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>海灣市捷運站</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>往大十字方向下一站是雙珠寶捷運站</li>
+                    <li>往艾爾塔方向下一站是白停捷運站</li>
+                </ul>
+            </div>
+        `);
+
+        var jewelrysubwayMarker = L.marker([647, 803]).addTo(subwayLayer);
+        jewelrysubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>雙珠寶捷運站</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>往大十字方向下一站是shopping mall捷運站</li>
+                    <li>往艾爾塔方向下一站是海灣市捷運站</li>
+                </ul>
+            </div>
+        `);
+
+        var shoppingmallsubwayMarker = L.marker([612, 897]).addTo(subwayLayer);
+        shoppingmallsubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>shopping mall捷運站</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>往大十字方向下一站是大十字</li>
+                    <li>往艾爾塔方向下一站是雙珠寶捷運站</li>
+                </ul>
+            </div>
+        `);
+
+        var bigtensubwayMarker = L.marker([573, 963]).addTo(subwayLayer);
+        bigtensubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>大十字</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>沙地是往醫院破口</li>
+                    <li>木棧道是接白通往米羅</li>
+                    <li>往西方向是接shopping mall捷運站往艾爾塔</li>
+                    <li>往東方向是往警局後</li>
+                </ul>
+            </div>
+        `);
+
+        // 其他區域
         var jailMarker = L.marker([1087, 1220]).addTo(otherLayer);
         jailMarker.bindPopup(`
             <div class="rp-popup" style="width: 280px;">
