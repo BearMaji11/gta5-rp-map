@@ -85,9 +85,11 @@
                 <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
                     <li>南面有一個出口(南出)</li>
                     <li>北面有兩個出口(北出&北小洞)</li>
-                    <li>東面樓梯常是接應點</li>
                     <li>頂樓東面飛板可以飛到地面或屋頂</li>
                     <li>頂樓西面飛板可以飛上高洛波塔</li>
+                    <li>北側往高速破口可能有接應</li>
+                    <li>各樓層都可能有接應車</li>
+                    <li>東面樓梯常是接應點</li>
                 </ul>
             </div>
         `);
@@ -101,16 +103,104 @@
                     <li>南面有一個出口(南出)</li>
                     <li>北面有一個出口北出</li>
                     <li>樓梯可以往北飛到捷運站</li>
+                    <li>東側草地上高速可能有接應</li>
                 </ul>
             </div>
         `);
         
-        // 犯罪區域（新座標大約在上方沙漠區）
-        var drugMarker = L.marker([1400, 1100]).addTo(davisLayer);
-        drugMarker.bindPopup(`
-            <div class="rp-popup">
-                <h3>【非法】毒品加工廠</h3>
-                <p><b>【RP 規範】：</b> 此處為高風險犯罪區域，平民請勿隨意靠近。</p>
+        // 街區區域
+        var megamallMarker = L.marker([380, 940]).addTo(davisLayer);
+        megamallMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>Mega Mall</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li> </li>
+                </ul>
+            </div>
+        `);
+
+        var davismarketMarker = L.marker([376, 928]).addTo(davisLayer);
+        davismarketMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>戴維斯超商</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li> </li>
+                </ul>
+            </div>
+        `);
+
+        var courtparkingMarker = L.marker([403, 985]).addTo(davisLayer);
+        courtparkingMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>法院停車場</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>西面、北面、南面各一個出口</li>
+                    <li>西面出口經連通道會到法院圓環</li>
+                    <li>各樓層皆可能有接應車</li>
+                </ul>
+            </div>
+        `);
+
+        var courtcircleMarker = L.marker([395, 994]).addTo(davisLayer);
+        courtcircleMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>法院圓環</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>西面、北面各一個出口</li>
+                    <li>東面上樓梯經連通道會到法院停車場</li>
+                </ul>
+            </div>
+        `);
+
+         // 東部工廠+米羅區域
+        var touristMarker = L.marker([368, 1069]).addTo(eastLayer);
+        touristMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>觀光景點</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li> </li>
+                </ul>
+            </div>
+        `);
+
+        
+        var mirromarketMarker = L.marker([601, 1133]).addTo(eastLayer);
+        mirromarketMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>米羅超商</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li> </li>
+                </ul>
+            </div>
+        `);
+
+        var casinoMarker = L.marker([670, 1094]).addTo(eastLayer);
+        casinoMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>賭場</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li> </li>
+                </ul>
+            </div>
+        `);
+
+        var horseMarker = L.marker([685, 1104]).addTo(eastLayer);
+        horsdeMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>馬場</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>南面可以飛往摩托幫</li>
+                    <li>西面入口往北可以飛往左側坡道</li>
+                    <li>北面可以飛往洛聖都高速</li>
+                </ul>
             </div>
         `);
 
@@ -118,7 +208,7 @@
         var overlayMaps = {
             "市中心": cityLayer,
             "街區": davisLayer,
-            "東部工廠": eastLayer,
+            "東部工廠+米羅": eastLayer,
             "機場系統": airLayer,
             "豪宅區": woodLayer,
             "其他": otherLayer
