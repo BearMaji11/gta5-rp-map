@@ -46,15 +46,27 @@
 
         // 5. 新增你的 RP 教學點位 (座標會根據新地圖大小改變，以下為新對應位置)
         
-        // 警局點位（新座標大約在市中心偏下）
+        // 市中心區域
         var lspdMarker = L.marker([500, 990]).addTo(cityLayer);
         lspdMarker.bindPopup(`
             <div class="rp-popup">
                 <h3>洛聖都警局 (LSPD / MRPD)</h3>
-                <p>嚴禁在警局門口無故挑釁警方，請保持基本尊嚴與秩序。</p>
+                <p> </p>
             </div>
         `);
 
+        var parkMarker = L.marker([521, 975]).addTo(govLayer);
+        lspdMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>軍團廣場/市政廳</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>北面有樓梯可以上到威能橋(圖一)</li>
+                    <li>北面的停車場通稱為公停</li>
+                </ul>
+            </div>
+        `);
+        
         // 犯罪區域（新座標大約在上方沙漠區）
         var drugMarker = L.marker([1400, 1100]).addTo(davisLayer);
         drugMarker.bindPopup(`
