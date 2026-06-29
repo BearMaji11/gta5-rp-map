@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 GTA5 RP 教學互動地圖</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        html, body, #map {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            background-color: #0d1117;
+        }
+        .rp-popup h3 { margin: 0 0 5px 0; color: #d32f2f; }
+        .rp-popup p { margin: 0; font-size: 14px; line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // 1. 初始化地圖
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: 1,
+            maxZoom: 5,
+            noWrap: true
+        });
+
+        // 2. 定義地圖邊界並定位到中央
+        var bounds = [[0, 0], [1024, 1024]];
+        map.fitBounds(bounds);
+        map.setView([512, 512], 2);
+
+        // 3. 載入 2026 目前最穩定、免費用不壞的開源 GTA5 地圖切片
+        L.tileLayer('https://raw.githubusercontent.com/gta5-map/gta5-map.github.io/master/tiles/{z}/{x}/{y}.png', {
+            bounds: bounds,
+            noWrap: true,
+            attribution: 'GTA5 RP Map'
+        }).addTo(map);
+
+        // 4. 圖層群組（分類選單）
+        var govLayer = L.layerGroup().addTo(map);
+        var crimeLayer = L.layerGroup().addTo(map);
+
+        // ==========================================
+        // 5. 【你可以在這裡自由修改、新增你的 L.marker】
+        // ==========================================
+        
+        // 警局點位範例
+        var lspdMarker = L.marker([350, 510]).addTo(govLayer);
+        lspdMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>洛聖都警局 (LSPD) 教學</h3>
+                <p><b>【RP 規範】：</b> 嚴禁在警局門口無故挑釁警方，請保持基本尊嚴與秩序。</p>
+            </div>
+        `);
+
+        // 犯罪區域範例
+        var drugMarker = L.marker([700, 400]).addTo(crimeLayer);
+        drugMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>【非法】毒品加工廠</h3>
+                <p><b>【RP 規範】：</b> 此處為高風險犯罪區域，平民請勿隨意靠近，誤入極可能被搶劫。</p>
+            </div>
+        `);
+
+        // 右上角選單控制
+        var overlayMaps = {
+            "公家機關 (警局/醫院)": govLayer,
+            "犯罪區域": crimeLayer
+        };
+        L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
+
+        // 點擊地圖可以在網頁的 F12 主控台抓取點位座標
+        map.on('click', function(e) {
+            console.log("當前點擊的正確座標為: ", e.latlng.lat, e.latlng.lng);
+        });
+    </script>
+</body>
+</html>
