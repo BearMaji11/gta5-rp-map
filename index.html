@@ -32,7 +32,7 @@
         var bounds = [[0, 0], [2048, 2048]];
 
         // 3. 核心修改：直接載入同資料夾底下的 map.jpg，不再求人！
-        L.imageOverlay('map.jpg', bounds).addTo(map);
+        L.imageOverlay('map.jpg.png', bounds).addTo(map);
         map.fitBounds(bounds);
         map.setView([1024, 1024], -1); // 預設視角看中央
 
