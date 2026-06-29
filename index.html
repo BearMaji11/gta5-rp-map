@@ -42,12 +42,13 @@
         var eastLayer = L.layerGroup().addTo(map);
         var airLayer = L.layerGroup().addTo(map);
         var woodLayer = L.layerGroup().addTo(map);
+        var subwayLayer = L.layerGroup().addTo(map);
         var otherLayer = L.layerGroup().addTo(map);
 
         // 5. 新增你的 RP 教學點位 (座標會根據新地圖大小改變，以下為新對應位置)
         
         // 市中心區域
-        var lspdMarker = L.marker([500, 990]).addTo(cityLayer);
+        var lspdMarker = L.marker([502, 1011]).addTo(cityLayer);
         lspdMarker.bindPopup(`
             <div class="rp-popup">
                 <h3>洛聖都警局 (LSPD / MRPD)</h3>
@@ -188,6 +189,138 @@
             </div>
         `);
 
+        var damMarker = L.marker([669, 1210]).addTo(eastLayer);
+        damMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>水壩</h3>
+                <p> </p>
+            </div>
+        `);
+
+        // 機場區域
+        var airparkingMarker = L.marker([237, 771]).addTo(airLayer);
+        airparkingMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>機場停車場</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var airportMarker = L.marker([211, 766]).addTo(airLayer);
+        airportMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>機場大樓</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>有分一二樓</li>
+                    <li>可能徒步走樓梯上/下樓上接應</li>
+                </ul>
+            </div>
+        `);
+
+        var aircircleMarker = L.marker([250, 788]).addTo(airLayer);
+        aircircleMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>機場圓環</h3>
+                <p> </p>
+            </div>
+        `);
+
+        // 豪宅區
+        var operaMarker = L.marker([774, 1048]).addTo(woodLayer);
+        operaMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>歌劇院</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>西面圍牆可能翻出去草地上接應</li>
+                </ul>
+            </div>
+        `);
+
+        var observatoryMarker = L.marker([710, 567]).addTo(woodLayer);
+        observatoryMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>天文台</h3>
+                <p> </p>
+            </div>
+        `);
+
+         var whitehouseMarker = L.marker([848, 868]).addTo(woodLayer);
+        whitehouseMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>白宮</h3>
+                <p> </p>
+            </div>
+        `);
+
+        // 地鐵系統
+        var mirrosubwayMarker = L.marker([620, 1110]).addTo(subwayLayer);
+        mirrosubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>米羅地下道</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>經過白通往大十字方向</li>
+                    <li>到白通前可以迴轉走小道往警局後</li>
+                </ul>
+            </div>
+        `);
+
+        var hospitalsubwayMarker = L.marker([578, 929]).addTo(subwayLayer);
+        hospitalsubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>醫院破口地下道</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>入口在佩羅高速上</li>
+                    <li>往大十字方向</li>
+                    <li>沙地地形</li>
+                </ul>
+            </div>
+        `);
+
+        var mrpdsubwayMarker = L.marker([492, 1025]).addTo(subwayLayer);
+        mrpdsubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>警局後地下道</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>右側有通道往水溝</li>
+                    <li>進入圓筒型隧道前右側有小道往米羅</li>
+                    <li>往大十字方向</li>
+                </ul>
+            </div>
+        `);
+
+         var mrpdditchsubwayMarker = L.marker([517, 1029]).addTo(subwayLayer);
+        mrpdditchsubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>警局後水溝小道</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>通往警局後地下道</li>
+                </ul>
+            </div>
+        `);
+
+        // 機場區域
+        var jailMarker = L.marker([1087, 1220]).addTo(otherLayer);
+        jailMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>監獄</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var smallairMarker = L.marker([1181, 1173]).addTo(otherLayer);
+        smallairMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>中部機場</h3>
+                <p> </p>
+            </div>
+        `);
+
         // 右上角選單控制
         var overlayMaps = {
             "市中心": cityLayer,
@@ -195,6 +328,7 @@
             "東部工廠+米羅": eastLayer,
             "機場系統": airLayer,
             "豪宅區": woodLayer,
+            "地鐵系統": subwayLayer,
             "其他": otherLayer
         };
         L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
