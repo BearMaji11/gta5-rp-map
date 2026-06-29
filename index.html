@@ -23,33 +23,27 @@
         // 1. 初始化地圖
         var map = L.map('map', {
             crs: L.CRS.Simple,
-            minZoom: 1,
-            maxZoom: 5,
+            minZoom: -2, // 允許縮得更小看全圖
+            maxZoom: 3,
             noWrap: true
         });
 
-        // 2. 定義地圖邊界並定位到中央
-        var bounds = [[0, 0], [1024, 1024]];
+        // 2. 定義地圖的大小範圍 (對應 map.jpg 的像素比例)
+        var bounds = [[0, 0], [2048, 2048]];
+
+        // 3. 核心修改：直接載入同資料夾底下的 map.jpg，不再求人！
+        L.imageOverlay('map.jpg', bounds).addTo(map);
         map.fitBounds(bounds);
-        map.setView([512, 512], 2);
+        map.setView([1024, 1024], -1); // 預設視角看中央
 
-        // 3. 載入 2026 目前最穩定、免費用不壞的開源 GTA5 地圖切片
-        L.tileLayer('https://files.gta5-map.com/tiles/atlas/{z}/{x}/{y}.png', {
-    bounds: bounds,
-    noWrap: true,
-    attribution: 'GTA5 RP Tutorial Map'
-}).addTo(map);
-
-        // 4. 圖層群組（分類選單）
+        // 4. 圖層群組
         var govLayer = L.layerGroup().addTo(map);
         var crimeLayer = L.layerGroup().addTo(map);
 
-        // ==========================================
-        // 5. 【你可以在這裡自由修改、新增你的 L.marker】
-        // ==========================================
+        // 5. 新增你的 RP 教學點位 (座標會根據新地圖大小改變，以下為新對應位置)
         
-        // 警局點位範例
-        var lspdMarker = L.marker([350, 510]).addTo(govLayer);
+        // 警局點位（新座標大約在市中心偏下）
+        var lspdMarker = L.marker([750, 1050]).addTo(govLayer);
         lspdMarker.bindPopup(`
             <div class="rp-popup">
                 <h3>洛聖都警局 (LSPD) 教學</h3>
@@ -57,12 +51,12 @@
             </div>
         `);
 
-        // 犯罪區域範例
-        var drugMarker = L.marker([700, 400]).addTo(crimeLayer);
+        // 犯罪區域（新座標大約在上方沙漠區）
+        var drugMarker = L.marker([1400, 1100]).addTo(crimeLayer);
         drugMarker.bindPopup(`
             <div class="rp-popup">
                 <h3>【非法】毒品加工廠</h3>
-                <p><b>【RP 規範】：</b> 此處為高風險犯罪區域，平民請勿隨意靠近，誤入極可能被搶劫。</p>
+                <p><b>【RP 規範】：</b> 此處為高風險犯罪區域，平民請勿隨意靠近。</p>
             </div>
         `);
 
@@ -75,7 +69,7 @@
 
         // 點擊地圖可以在網頁的 F12 主控台抓取點位座標
         map.on('click', function(e) {
-            console.log("當前點擊的正確座標為: ", e.latlng.lat, e.latlng.lng);
+            console.log("當前點擊的正確座標為: ", Math.round(e.latlng.lat), Math.round(e.latlng.lng));
         });
     </script>
 </body>
