@@ -61,8 +61,46 @@
                 <h3>軍團廣場/市政廳</h3>
         
                 <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
-                    <li>北面有樓梯可以上到威能橋(圖一)</li>
-                    <li>北面的停車場通稱為公停</li>
+                    <li>北面有樓梯可以上到威能橋</li>
+                </ul>
+            </div>
+        `);
+
+        var publicparkingMarker = L.marker([537, 976]).addTo(cityLayer);
+        publicparkingMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>公停</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>一、二樓各有一個出口</li>
+                </ul>
+            </div>
+        `);
+
+        var redparkingMarker = L.marker([539, 885]).addTo(cityLayer);
+        redparkingMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>紅白停車場(簡稱紅白)</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>南面有一個出口(南出)</li>
+                    <li>北面有兩個出口(北出&北小洞)</li>
+                    <li>東面樓梯常是接應點</li>
+                    <li>頂樓東面飛板可以飛到地面或屋頂</li>
+                    <li>頂樓西面飛板可以飛上高洛波塔</li>
+                </ul>
+            </div>
+        `);
+
+        var whiteparkingMarker = L.marker([539, 864]).addTo(cityLayer);
+        whiteparkingMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>白色停車場(簡稱白停)</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>南面有一個出口(南出)</li>
+                    <li>北面有一個出口北出</li>
+                    <li>樓梯可以往北飛到捷運站</li>
                 </ul>
             </div>
         `);
