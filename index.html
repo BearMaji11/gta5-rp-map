@@ -37,13 +37,17 @@
         map.setView([1024, 1024], -1); // 預設視角看中央
 
         // 4. 圖層群組
-        var govLayer = L.layerGroup().addTo(map);
-        var crimeLayer = L.layerGroup().addTo(map);
+        var cityLayer = L.layerGroup().addTo(map);
+        var davisLayer = L.layerGroup().addTo(map);
+        var eastLayer = L.layerGroup().addTo(map);
+        var airLayer = L.layerGroup().addTo(map);
+        var woodLayer = L.layerGroup().addTo(map);
+        var otherLayer = L.layerGroup().addTo(map);
 
         // 5. 新增你的 RP 教學點位 (座標會根據新地圖大小改變，以下為新對應位置)
         
         // 警局點位（新座標大約在市中心偏下）
-        var lspdMarker = L.marker([750, 1050]).addTo(govLayer);
+        var lspdMarker = L.marker([750, 1050]).addTo(cityLayer);
         lspdMarker.bindPopup(`
             <div class="rp-popup">
                 <h3>洛聖都警局 (LSPD) 教學</h3>
@@ -52,7 +56,7 @@
         `);
 
         // 犯罪區域（新座標大約在上方沙漠區）
-        var drugMarker = L.marker([1400, 1100]).addTo(crimeLayer);
+        var drugMarker = L.marker([1400, 1100]).addTo(davisLayer);
         drugMarker.bindPopup(`
             <div class="rp-popup">
                 <h3>【非法】毒品加工廠</h3>
@@ -62,8 +66,12 @@
 
         // 右上角選單控制
         var overlayMaps = {
-            "公家機關 (警局/醫院)": govLayer,
-            "犯罪區域": crimeLayer
+            "市中心": cityLayer,
+            "街區": davisLayer,
+            "東部工廠": eastLayer,
+            "機場系統": airLayer,
+            "豪宅區": woodLayer,
+            "其他": otherLayer
         };
         L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
 
