@@ -34,11 +34,11 @@
         map.setView([512, 512], 2);
 
         // 3. 載入 2026 目前最穩定、免費用不壞的開源 GTA5 地圖切片
-        L.tileLayer('https://raw.githubusercontent.com/gta5-map/gta5-map.github.io/master/tiles/{z}/{x}/{y}.png', {
-            bounds: bounds,
-            noWrap: true,
-            attribution: 'GTA5 RP Map'
-        }).addTo(map);
+        L.tileLayer('https://files.gta5-map.com/tiles/atlas/{z}/{x}/{y}.png', {
+    bounds: bounds,
+    noWrap: true,
+    attribution: 'GTA5 RP Tutorial Map'
+}).addTo(map);
 
         // 4. 圖層群組（分類選單）
         var govLayer = L.layerGroup().addTo(map);
