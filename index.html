@@ -400,7 +400,45 @@
             </div>
         `);
 
-        
+        var rednewsMarker = L.marker([625, 763]).addTo(cityLayer);
+        rednewsMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>紅色新聞樓</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var golfMarker = L.marker([669, 750]).addTo(cityLayer);
+        golfMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>高爾夫球場</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var cemetoryMarker = L.marker([621, 660]).addTo(cityLayer);
+        cemetoryMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>墓園</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var westgasMarker = L.marker([614, 594]).addTo(cityLayer);
+        westgasMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>西濱加油站</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var villaMarker = L.marker([619, 609]).addTo(cityLayer);
+        villaMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>玩咖別墅</h3>
+                <p> </p>
+            </div>
+        `);
         
         // 街區區域
         var megamallMarker = L.marker([380, 940]).addTo(davisLayer);
