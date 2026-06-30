@@ -297,6 +297,38 @@
                 </ul>
             </div>
         `);
+
+        var catcafeeMarker = L.marker([481, 843]).addTo(cityLayer);
+        catcafeMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>貓咖</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var redpavilionMarker = L.marker([506, 806]).addTo(cityLayer);
+        redpavilionMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>紅色涼亭</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var watercityMarker = L.marker([489, 769]).addTo(cityLayer);
+        watercityrMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>水都/水之七都</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var amusementMarker = L.marker([481, 663]).addTo(cityLayer);
+        amusementMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>遊樂園</h3>
+                <p> </p>
+            </div>
+        `);
         
         // 街區區域
         var megamallMarker = L.marker([380, 940]).addTo(davisLayer);
