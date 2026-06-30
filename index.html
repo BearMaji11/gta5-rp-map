@@ -234,6 +234,69 @@
                 </ul>
             </div>
         `);
+
+        var littlesoulmarketMarker = L.marker([512, 821]).addTo(cityLayer);
+        littlesoulmarketMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>小首爾超商</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var littlesoulsubwayMarker = L.marker([456, 851]).addTo(cityLayer);
+        littlesoulsubwayMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>小首爾捷運站</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>沿著鐵軌往東會到MRPD後面(大角羔大街)</li>
+                    <li>沿著鐵軌往南會進入機場系統</li>
+                </ul>
+            </div>
+        `);
+
+        var sanherMarker = L.marker([462, 834]).addTo(cityLayer);
+        sanherMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>三合會</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var helicopterMarker = L.marker([428, 818]).addTo(cityLayer);
+        helicopterMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>停機坪</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var waterMarker = L.marker([454, 802]).addTo(cityLayer);
+        waterMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>落水區</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>過窄道直直往西南方有一個出口</li>
+                    <li>過窄道又轉往西北方有一個出口</li>
+                    <li>不要掉下水</li>
+                </ul>
+            </div>
+        `);
+
+        var littlesoulconstructionMarker = L.marker([506, 862]).addTo(cityLayer);
+        littlesoulconstructionMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>小首爾工地</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>西面有一個出口</li>
+                    <li>北棟賞二樓可以直接從東面接到高洛波塔</li>
+                    <li>北棟往北飛可以到白停</li>
+                    <li>南棟往南飛可以到禁果大道</li>
+                </ul>
+            </div>
+        `);
         
         // 街區區域
         var megamallMarker = L.marker([380, 940]).addTo(davisLayer);
