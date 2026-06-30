@@ -388,6 +388,19 @@
                 </ul>
             </div>
         `);
+
+        var greennewsMarker = L.marker([564, 883]).addTo(cityLayer);
+        greennewsMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>綠色新聞樓</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>可以徒步走樓梯上樓到高洛波塔換接應(或是反過來)</li>
+                </ul>
+            </div>
+        `);
+
+        
         
         // 街區區域
         var megamallMarker = L.marker([380, 940]).addTo(davisLayer);
