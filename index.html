@@ -108,6 +108,55 @@
                 </ul>
             </div>
         `);
+
+        var busMarker = L.marker([561, 1015]).addTo(cityLayer);
+        busMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>公車站</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>高速公路徒步下公車站會有接應</li>
+                </ul>
+            </div>
+        `);
+
+        var boomMarker = L.marker([593, 1038]).addTo(cityLayer);
+        boomMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>爆炸倉</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>常見飛車點</li>
+                    <li>北往南可直飛佩羅高速</li>
+                    <li>飛到屋頂再飛佩羅高速</li>
+                    <li>南往北直飛洛聖都高速</li>
+                </ul>
+            </div>
+        `);
+
+        var philboxMarker = L.marker([571, 988]).addTo(cityLayer);
+        philboxMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>圓帽山醫院</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var textileMarker = L.marker([507, 1059]).addTo(cityLayer);
+        textileMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>紡織廠</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var ranchumarketMarker = L.marker([503, 1127]).addTo(cityLayer);
+        ranchumarketMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>藍丘超商</h3>
+                <p> </p>
+            </div>
+        `);
         
         // 街區區域
         var megamallMarker = L.marker([380, 940]).addTo(davisLayer);
