@@ -329,6 +329,66 @@
                 <p> </p>
             </div>
         `);
+
+        var jewelrywallMarker = L.marker([589, 839]).addTo(cityLayer);
+        jewelrywallMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>珠寶牆</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>成功的話會沿著草地進入佩羅高速(注意中間迴轉走小縫)</li>
+                    <li>失敗的話會進入高洛波塔匝道</li>
+                </ul>
+            </div>
+        `);
+
+        var jewelrytrashMarker = L.marker([592, 854]).addTo(cityLayer);
+        jewelrytrashMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>珠寶垃圾桶</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>成功往右飛會到草地接佩羅高速</li>
+                    <li>如果直線大飛會到高洛波往佩羅匝道</li>
+                    <li>失敗的話會到牆壁另一側走北出口</li>
+                </ul>
+            </div>
+        `);
+
+        var jewelrycircleMarker = L.marker([591, 801]).addTo(cityLayer);
+        jewelrycircleMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>珠寶圓環</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>可能徒步翻牆到草地換接應(或是反過來)</li>
+                </ul>
+            </div>
+        `);
+
+        var moviestreetMarker = L.marker([576, 746]).addTo(cityLayer);
+        moviestreetMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>電影街</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>北邊有小道可以接回西邊出口</li>
+                    <li>南邊經過拍攝地點可以從東邊小門出</li>
+                </ul>
+            </div>
+        `);
+
+        var jewelrywallMarker = L.marker([589, 839]).addTo(cityLayer);
+        jewelrywallMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>珠寶牆</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>成功的話會沿著草地進入佩羅高速(注意中間迴轉走小縫)</li>
+                    <li>失敗的話會進入高洛波塔匝道</li>
+                </ul>
+            </div>
+        `);
         
         // 街區區域
         var megamallMarker = L.marker([380, 940]).addTo(davisLayer);
