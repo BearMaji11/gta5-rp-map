@@ -38,12 +38,12 @@
 
         // 4. 圖層群組
         var cityLayer = L.layerGroup().addTo(map);
-        var davisLayer = L.layerGroup().addTo(map);
-        var eastLayer = L.layerGroup().addTo(map);
-        var airLayer = L.layerGroup().addTo(map);
-        var woodLayer = L.layerGroup().addTo(map);
-        var subwayLayer = L.layerGroup().addTo(map);
-        var otherLayer = L.layerGroup().addTo(map);
+        var davisLayer = L.layerGroup();
+        var eastLayer = L.layerGroup();
+        var airLayer = L.layerGroup();
+        var woodLayer = L.layerGroup();
+        var subwayLayer = L.layerGroup();
+        var otherLayer = L.layerGroup();
 
         // 5. 新增你的 RP 教學點位 (座標會根據新地圖大小改變，以下為新對應位置)
         
@@ -155,6 +155,65 @@
             <div class="rp-popup">
                 <h3>藍丘超商</h3>
                 <p> </p>
+            </div>
+        `);
+
+        var eightMarker = L.marker([522, 915]).addTo(cityLayer);
+        eightMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>八字鬍</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>沿著樓梯往上走會接到威能橋上</li>
+                </ul>
+            </div>
+        `);
+
+        var redsideparkingMarker = L.marker([516, 883]).addTo(cityLayer);
+        redsideparkingMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>紅白旁停車場</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>往南經過小飛板可以接往低洛波塔</li>
+                    <li>往東會通往艾爾塔街</li>
+                    <li>往北會到紅白停車場南面</li>
+                </ul>
+            </div>
+        `);
+
+        var oldcarMarker = L.marker([485, 932]).addTo(cityLayer);
+        oldcarMarker.bindPopup(`
+            <div class="rp-popup">
+                <h3>舊車商(PDM)</h3>
+                <p> </p>
+            </div>
+        `);
+
+        var pdmconstructionMarker = L.marker([516, 883]).addTo(cityLayer);
+        pdmconstructionMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>舊車商工地(PDM工地)</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>一樓的東西南北各一個出口</li>
+                    <li>南棟上樓可以往東飛到PDM</li>
+                    <li>南棟上樓可以往西飛到艾爾塔街</li>
+                    <li>北棟上樓有往北的兩個出口可以飛下樓</li>
+                </ul>
+            </div>
+        `);
+
+        var openairparkingMarker = L.marker([567, 947]).addTo(cityLayer);
+        openairparkingMarker.bindPopup(`
+            <div class="rp-popup" style="width: 280px;">
+                <h3>露天停車場</h3>
+        
+                <ul style="padding-left: 20px; margin: 5px 0; font-size: 13px; line-height: 1.5;">
+                    <li>南側小洞可以往上到威能橋(通常會從上面下來)</li>
+                    <li>東側有一個出口跟一個小洞往威能橋下</li>
+                    <li>北側有一個出口可以接統合小道</li>
+                </ul>
             </div>
         `);
         
